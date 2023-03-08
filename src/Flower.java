@@ -1,4 +1,4 @@
-public class Flower {
+public class Flower{
     private int X;
     private int Y;
     private String[] color = {"red", "orange", "yellow", "green", "blue", "indigo", "violet", "pink"};
@@ -12,17 +12,19 @@ public class Flower {
     }
 
     public void draw(){
-        Stalk stalk = new Stalk(X,Y);
-        stalk.draw();
         for(int i = 0; i < 8; i++){
             Heart heart = new Heart(i, 0, X, Y);
             heart.set_color(color[i]);
-            heart.draw();
+            Thread thread = new Thread(heart);
+            thread.start();
         }
-        for(int i = 0; i < 8; i++){
-            Heart heart = new Heart(i, 2, X, Y);
-            heart.set_color(color[i]);
-            heart.draw();
+        for(int j = 0; j < 8; j++){
+            Heart heart2 = new Heart(j, 2, X, Y);
+            heart2.set_color(color[j]);
+            Thread thread = new Thread(heart2);
+            thread.start();
         }
+        Thread thread = new Thread(new Stalk(X,Y));
+        thread.start();
     }
 }

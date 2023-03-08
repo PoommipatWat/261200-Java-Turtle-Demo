@@ -1,4 +1,4 @@
-public class Heart {
+public class Heart implements Runnable{
     private Turtle bot;
     private Turtle bot2;
     private int degree;
@@ -55,14 +55,13 @@ public class Heart {
                 bott.right(178.5);
             else if(theta < 0 && last_theta > 0)
                 bott.left(178.5);
-            System.out.println(R + " " + theta);
             X_old = X;
             Y_old = Y;
             last_theta = theta;
         }
     }
 
-    public void draw(){
+    public void run(){
         this.half_draw(bot, 1, degree, scale);
         this.half_draw(bot2, -1, degree, scale);
     }

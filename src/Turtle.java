@@ -2221,25 +2221,7 @@ public class Turtle implements Runnable, ActionListener, MouseListener, MouseMot
 
 
 
-    public static void main(String[] a)
-    {
-        // Flower flower = new Flower(0,0);
-        // flower.draw();
 
-        // Flower flower2 = new Flower(1,1);
-        // flower2.draw();
-
-        for(int i = 0; i < 5; i++)
-        {
-            for(int j = 0; j < 5; j+=2)
-            {
-                Flower flower = new Flower(i,j);
-                flower.draw();
-            }
-        }
-
-        Turtle.saveGCODE("test.gcode");
-    }
 
     /**
      * Internal mehod for handling events.
@@ -2611,7 +2593,7 @@ public class Turtle implements Runnable, ActionListener, MouseListener, MouseMot
     }
 
 
-    private static void saveGCODE(String filename)
+    static void saveGCODE(String filename)
     {
         PrintWriter out=new PrintWriter(System.out);
         try

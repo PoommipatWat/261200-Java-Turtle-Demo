@@ -1,4 +1,4 @@
-public class Stalk {
+public class Stalk implements Runnable{
     private Turtle Bob;
 
     public Stalk (int x, int y){
@@ -11,7 +11,7 @@ public class Stalk {
         Bob.speed(speed);
     }
 
-    public void draw(){
+    public void run(){
         Bob.right(90);
         Bob.forward(1000);
     }
